@@ -1,16 +1,11 @@
 package com.frig0polla.practica1.controller;
 
-
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.stream.IntStream;
 
 @RestController
 public class indexController {
@@ -28,8 +23,7 @@ public class indexController {
 
     @GetMapping("/numsaludo")
     public String saludo(
-            @RequestParam int veces
-    ) {
+            @RequestParam int veces) {
         LocalDateTime ldt = LocalDateTime.now();
 
         if (ldt.getHour() < 12 && ldt.getHour() > 6) {
@@ -40,9 +34,14 @@ public class indexController {
             System.out.println("<b>" + "Buenas noches" + "<br/>");
         }
         String saludo = ldt + "Saludos desde " + centro + " de parte de " + desarrollador + "<br />";
-        StringBuilder sb = new StringBuilder( saludo.repeat(veces));
-        IntStream.rangeClosed(1,veces).forEach(i -> sb.append(i + ". " + sb));
+        return saludosNumerados(saludo, 1, veces);
+    }
 
-        return sb.toString();
+    private String saludosNumerados(String saludo, int indice, int veces) {
+        if (indice > veces) {
+            return " ";
+        }
+        return "Saludo número " + indice + ": " + saludo
+                + saludosNumerados(saludo, indice + 1, veces);
     }
 }
