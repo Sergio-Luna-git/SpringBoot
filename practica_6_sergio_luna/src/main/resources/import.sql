@@ -1,0 +1,16 @@
+INSERT INTO curso (id, nombre, ciclo, aula, turno) VALUES (1, '1º DAM', 'Desarrollo de Aplicaciones Multiplataforma', 'Aula 101', 'MAÑANA');
+INSERT INTO curso (id, nombre, ciclo, aula, turno) VALUES (2, '2º DAM', 'Desarrollo de Aplicaciones Multiplataforma', 'Aula 102', 'TARDE');
+INSERT INTO curso (id, nombre, ciclo, aula, turno) VALUES (3, '1º DAW', 'Desarrollo de Aplicaciones Web', 'Aula 103', 'MAÑANA');
+INSERT INTO curso (id, nombre, ciclo, aula, turno) VALUES (4, '2º DAW', 'Desarrollo de Aplicaciones Web', 'Aula 104', 'TARDE');
+INSERT INTO alumno (nia, nombre, apellidos, email, notaMediaCursoAnterior) VALUES ('12345678', 'Alejandro', 'Pérez Gómez', 'aperez@alu.edu.es', 7.85);
+INSERT INTO alumno (nia, nombre, apellidos, email, notaMediaCursoAnterior) VALUES ('87654321', 'Lucía', 'Martínez Ruiz', 'lmartinez@alu.edu.es', 8.40);
+INSERT INTO alumno (nia, nombre, apellidos, email, notaMediaCursoAnterior) VALUES ('11223344', 'Carlos', 'Sánchez López', 'csanchez@alu.edu.es', 6.50);
+INSERT INTO alumno (nia, nombre, apellidos, email, notaMediaCursoAnterior) VALUES ('44332211', 'María', 'Fernández Torres', 'mfernandez@alu.edu.es', 9.10);
+INSERT INTO alumno (nia, nombre, apellidos, email, notaMediaCursoAnterior) VALUES ('55667788', 'David', 'Gómez Navarro', 'dgomez@alu.edu.es', 7.20);
+INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (1, 'Programación', 'PROG', 8, 240, 'PRIMERO', 0, 1);
+INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (2, 'Bases de Datos', 'BBDD', 6, 180, 'PRIMERO', 0, 1);
+INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (3, 'Sistemas Informáticos', 'SISI', 6, 180, 'PRIMERO', 0, 1);
+INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (4, 'Acceso a Datos', 'ACDA', 6, 120, 'SEGUNDO', 0, 1);
+INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (5, 'Desarrollo de Interfaces', 'DEIN', 6, 120, 'SEGUNDO', 0, 1);
+INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (6, 'Programación Multimedia y Dispositivos Móviles', 'PMDM', 5, 105, 'SEGUNDO', 0, 1);
+INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (7, 'Inglés Técnico', 'INGL', 2, 64, 'PRIMERO', 1, 1);

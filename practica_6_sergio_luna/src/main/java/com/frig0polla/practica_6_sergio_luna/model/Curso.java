@@ -3,10 +3,14 @@ package com.frig0polla.practica_6_sergio_luna.model;
 
 import com.frig0polla.practica_6_sergio_luna.model.enums.Turno;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Table( name = "curso")
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 
 public class Curso {
@@ -24,5 +28,7 @@ public class Curso {
     @Column
     @Enumerated(EnumType.STRING)
     private Turno turno;
+
+
 
 }
