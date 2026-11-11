@@ -22,22 +22,22 @@ public class Modulo {
     @Column( nullable = false )
     private String nombre;
 
-    @Column( length = 4 )
+    @Column( length = 4, nullable = false)
     private String codigo;
 
-    @Column
+    @Column( nullable = true)
     private int horasSemanales;
 
-    @Column
+    @Column( nullable = true)
     private int horasTotales;
 
-    @Column
+    @Column( nullable = false)
     @Enumerated(EnumType.STRING)
     private Curso curso;
 
-    @Column
+    @Column(nullable = true)
     private boolean optativo;
 
-    @Column
+    @Column(nullable = true)
     private boolean activo;
 }

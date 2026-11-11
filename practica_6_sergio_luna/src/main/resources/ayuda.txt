@@ -1,0 +1,16 @@
+Precisión y escala: La precisión es el total de dígitos de un número decimal; la escala, los dígitos después de la coma. Se configuran en @Column. Por ejemplo, precision = 4, scale = 2 permite valores como 10.00:
+@Column(precision = 4, scale = 2)
+prívate BigDecimal notaMedia;
+Relación N:1 entre Alumno y Curso: Significa que varios alumnos pueden pertenecer al mismo curso y cada alumno tiene un curso. Se indica en Alumno con @ManyToOne; @JoinColumn configura la columna que guarda la clave foránea:
+@ManyToOne
+@JoinColumn(name = "curso_id")
+prívate Curso curso;
+Relación N:M entre Curso y Asignatura: Significa que un curso puede incluir varias asignaturas y una asignatura puede estar en varios cursos. Se indica con @ManyToMany y JPA crea una tabla intermedia. Un lado define esa tabla con @JoinTable; el otro la referencia con mappedBy:
+// En Curso
+@ManyToMany
+@JoinTable(name = "curso_asignatura")
+prívate Set<Asignatura> asignaturas;
+
+// En Asignatura
+@ManyToMany(mappedBy = "asignaturas")
+prívate Set<Curso> cursos;

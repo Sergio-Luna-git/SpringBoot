@@ -15,17 +15,17 @@ import lombok.NoArgsConstructor;
 
 public class Curso {
     @Id
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
+    @Column(nullable = false)
     private String nombre;
 
-    @Column
+    @Column(nullable = false)
     private String ciclo;
 
-    @Column
+    @Column(nullable = true)
     @Enumerated(EnumType.STRING)
     private Turno turno;
 

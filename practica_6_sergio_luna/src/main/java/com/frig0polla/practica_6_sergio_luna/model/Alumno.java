@@ -15,20 +15,20 @@ import java.math.BigDecimal;
 
 public class Alumno {
     @Id
-    @Column( unique = true )
+    @Column( unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int nia;
 
-    @Column
+    @Column(nullable = false)
     private String nombre;
 
-    @Column
+    @Column(nullable = false)
     private String apellidos;
 
-    @Column
+    @Column(nullable = true)
     private String email;
 
-    @Column
+    @Column(nullable = true)
     private BigDecimal notaMediaCurso;
 
 
