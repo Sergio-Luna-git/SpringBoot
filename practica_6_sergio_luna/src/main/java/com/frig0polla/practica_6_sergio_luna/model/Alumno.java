@@ -4,12 +4,15 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 @Table(name = "alumno")
 @Entity
 @NoArgsConstructor
+@ToString
 @AllArgsConstructor
 @Data
 
@@ -28,9 +31,17 @@ public class Alumno {
     @Column(nullable = true)
     private String email;
 
-    @Column(nullable = true)
-    private BigDecimal notaMediaCurso;
+    @Column(nullable = true, precision = 4, scale = 2)
+    private BigDecimal notaMediaCursoAnterior;
 
+    @Transient
+    private Curso curso = new Curso();
 
+    public Alumno (String nombre,  String apellidos, String email, double notaMediaCursoAnterior) {
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.email = email;
+            this.notaMediaCursoAnterior=  BigDecimal.valueOf(notaMediaCursoAnterior);
+    }
 
 }

@@ -1,16 +1,22 @@
-INSERT INTO curso (id, nombre, ciclo, aula, turno) VALUES (1, '1º DAM', 'Desarrollo de Aplicaciones Multiplataforma', 'Aula 101', 'MAÑANA');
-INSERT INTO curso (id, nombre, ciclo, aula, turno) VALUES (2, '2º DAM', 'Desarrollo de Aplicaciones Multiplataforma', 'Aula 102', 'TARDE');
-INSERT INTO curso (id, nombre, ciclo, aula, turno) VALUES (3, '1º DAW', 'Desarrollo de Aplicaciones Web', 'Aula 103', 'MAÑANA');
-INSERT INTO curso (id, nombre, ciclo, aula, turno) VALUES (4, '2º DAW', 'Desarrollo de Aplicaciones Web', 'Aula 104', 'TARDE');
-INSERT INTO alumno (nia, nombre, apellidos, email, notaMediaCursoAnterior) VALUES ('12345678', 'Alejandro', 'Pérez Gómez', 'aperez@alu.edu.es', 7.85);
-INSERT INTO alumno (nia, nombre, apellidos, email, notaMediaCursoAnterior) VALUES ('87654321', 'Lucía', 'Martínez Ruiz', 'lmartinez@alu.edu.es', 8.40);
-INSERT INTO alumno (nia, nombre, apellidos, email, notaMediaCursoAnterior) VALUES ('11223344', 'Carlos', 'Sánchez López', 'csanchez@alu.edu.es', 6.50);
-INSERT INTO alumno (nia, nombre, apellidos, email, notaMediaCursoAnterior) VALUES ('44332211', 'María', 'Fernández Torres', 'mfernandez@alu.edu.es', 9.10);
-INSERT INTO alumno (nia, nombre, apellidos, email, notaMediaCursoAnterior) VALUES ('55667788', 'David', 'Gómez Navarro', 'dgomez@alu.edu.es', 7.20);
-INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (1, 'Programación', 'PROG', 8, 240, 'PRIMERO', 0, 1);
-INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (2, 'Bases de Datos', 'BBDD', 6, 180, 'PRIMERO', 0, 1);
-INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (3, 'Sistemas Informáticos', 'SISI', 6, 180, 'PRIMERO', 0, 1);
-INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (4, 'Acceso a Datos', 'ACDA', 6, 120, 'SEGUNDO', 0, 1);
-INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (5, 'Desarrollo de Interfaces', 'DEIN', 6, 120, 'SEGUNDO', 0, 1);
-INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (6, 'Programación Multimedia y Dispositivos Móviles', 'PMDM', 5, 105, 'SEGUNDO', 0, 1);
-INSERT INTO modulo (id, nombre, codigo, horasSemanales, horasTotales, curso, optativo, activo) VALUES (7, 'Inglés Técnico', 'INGL', 2, 64, 'PRIMERO', 1, 1);
+-- Cursos
+insert into curso (nombre, ciclo, aula, turno) values ('DAM 1', 'DAM', 'A1', 'MATUTINO');
+insert into curso (nombre, ciclo, aula, turno) values ('DAM 2', 'DAM', 'A2', 'MATUTINO');
+insert into curso (nombre, ciclo, aula, turno) values ('DAW 1', 'DAW', 'B1', 'VESPERTINO');
+insert into curso (nombre, ciclo, aula, turno) values ('DAW 2', 'DAW', 'B2', 'VESPERTINO');
+
+-- Módulos
+insert into modulo (nombre, codigo, horas_semanales, horas_totales, curso, optativo, activo) values ('Programacion Aplicaciones Multiplataforma', 'PAM1', 6, 192, 'SEGUNDO', false, true);
+insert into modulo (nombre, codigo, horas_semanales, horas_totales, curso, optativo, activo) values ('Acceso a Datos', 'AD01', 5, 160, 'SEGUNDO', false, true);
+
+-- Alumnos
+insert into alumno (nombre, apellidos, email, notaMediaCursoAnterior) values ('Ana', 'García López', 'ana.garcia.dam1@example.com', 8.75);
+insert into alumno (nombre, apellidos, email, notaMediaCursoAnterior) values ('Carlos', 'Pérez Martín', 'carlos.perez.dam1@example.com', 7.20);
+
+insert into alumno (nombre, apellidos, email, notaMediaCursoAnterior) values ('Lucía', 'Fernández Ruiz', 'lucia.fernandez.dam2@example.com', 9.10);
+insert into alumno (nombre, apellidos, email, notaMediaCursoAnterior) values ('David', 'Sánchez Torres', 'david.sanchez.dam2@example.com', 6.95);
+
+insert into alumno (nombre, apellidos, email, notaMediaCursoAnterior) values ('María', 'Romero Gil', 'maria.romero.daw1@example.com', 8.40);
+insert into alumno (nombre, apellidos, email, notaMediaCursoAnterior) values ('Javier', 'Morales León', 'javier.morales.daw1@example.com', 7.85);
+
+insert into alumno (nombre, apellidos, email, notaMediaCursoAnterior) values ('Elena', 'Ruiz Navarro', 'elena.ruiz.daw2@example.com', 9.30);
+insert into alumno (nombre, apellidos, email, notaMediaCursoAnterior) values ('Pablo', 'Gil Herrera', 'pablo.gil.daw2@example.com', 6.60);

@@ -1,11 +1,15 @@
 package com.frig0polla.practica_6_sergio_luna.model;
 
 
-import com.frig0polla.practica_6_sergio_luna.model.enums.Curso;
+
+import com.frig0polla.practica_6_sergio_luna.enums.Curso;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+
 
 @Data
 @Entity
@@ -15,7 +19,7 @@ import lombok.NoArgsConstructor;
 
 public class Modulo {
     @Id
-    @Column( unique = true )
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
@@ -26,10 +30,10 @@ public class Modulo {
     private String codigo;
 
     @Column( nullable = true)
-    private int horasSemanales;
+    private int horas_semanales;
 
     @Column( nullable = true)
-    private int horasTotales;
+    private int horas_totales;
 
     @Column( nullable = false)
     @Enumerated(EnumType.STRING)
@@ -40,4 +44,7 @@ public class Modulo {
 
     @Column(nullable = true)
     private boolean activo;
+
+    @Transient
+    private ArrayList<Curso> cursos =  new ArrayList<Curso>();
 }
